@@ -25,29 +25,29 @@ curr=conn.cursor()
 # stock=curr.fetchall()
 # print(stock)
 
-def fetch_products():
-    curr.execute('select * from products;')
-    products=curr.fetchall()
-    return products
-prods=fetch_products()
-print('my products')
-print(prods)
+# def fetch_products():
+#     curr.execute('select * from products;')
+#     products=curr.fetchall()
+#     return products
+# prods=fetch_products()
+# print('my products')
+# print(prods)
 
-def fetch_sales():
-    curr.execute('select * from sales;')
-    sales=curr.fetchall()
-    return sales
-sal=fetch_sales()
-print('my sales')
-print(sal)
+# def fetch_sales():
+#     curr.execute('select * from sales;')
+#     sales=curr.fetchall()
+#     return sales
+# sal=fetch_sales()
+# print('my sales')
+# print(sal)
 
-def fetch_stock():
-    curr.execute('select * from stock;')
-    stock=curr.fetchall()
-    return stock
-stoc=fetch_stock()
-print('my stock')
-print(stoc)
+# def fetch_stock():
+#     curr.execute('select * from stock;')
+#     stock=curr.fetchall()
+#     return stock
+# stoc=fetch_stock()
+# print('my stock')
+# print(stoc)
 
 # inserting sales data
 # curr.execute('insert into sales(pid,quantity,created_at)values(1,10,now()),(2,15,now()),(3,40,now()),(4,23,now()),(5,35,now());')
@@ -62,8 +62,8 @@ def fetch_data(table_name):
     curr.execute(f'select * from {table_name}')
     data=curr.fetchall()
     return data
-products=fetch_data('products')
-print(products)
+# products=fetch_data('products')
+# print(products)
 
 
 # adding a data one by one without repeating the full query
@@ -88,16 +88,16 @@ def product_profit():
     curr.execute(query)
     profit=curr.fetchall()
     return profit
-my_profit=product_profit()
-print('Profits')
-print(my_profit)
+# my_profit=product_profit()
+# print('Profits')
+# print(my_profit)
 
 # function to get sales per product
 def product_sale():
     query='select p.name,p.id,sum(selling_price*quantity) as total_sales from products as p join sales as s on p.id=s.pid group by p.name,p.id;'
     curr.execute(query)
-    profit=curr.fetchall()
-    return profit
-sales=product_sale()
-print('Sales made')
-print(sales)
+    sales=curr.fetchall()
+    return sales
+# sales=product_sale()
+# print('Sales made')
+# print(sales)
