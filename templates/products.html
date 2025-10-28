@@ -11,10 +11,99 @@
 
 <body>
     <div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bs-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav nav-underline">
+                        <li class="nav-item active" arial-current="page">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Stock</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mod">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add product
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Update product</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" required>
+                                    <div class="valid-feedback">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Buying price</label>
+                                    <input type="text" class="form-control" required>
+                                    <div class="valid-feedback">
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label">Selling price</label>
+                                    <input type="text" class="form-control" required>
+                                    <div class="invalid-feedback">
+
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-3">
+                                    <label class="form-label">State</label>
+                                    <select class="form-select" 
+                                        aria-describedby="validationServer04Feedback" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        <option>...</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a valid state.
+                                    </div>
+                                </div> -->
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <h3>Products</h3>
-        <p>{{myprods}}</p>
         <div class="productstable">
-            <table class="table">
+            <table class="table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
@@ -24,13 +113,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for x in myprods %}
                     <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>{{x[0]}}</td>
+                        <td>{{x[1]}}</td>
+                        <td>{{x[2]}}</td>
+                        <td>{{x[3]}}</td>
                     </tr>
-
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
