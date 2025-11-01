@@ -67,24 +67,30 @@ def fetch_data(table_name):
 
 
 # adding a data one by one without repeating the full query
-# def insert_products(values):
-#     query='insert into products(name,buying_price,selling_price)values(%s,%s,%s);'
-#     curr.execute(query,values)
-#     conn.commit()
+def insert_products(values):
+    query='insert into products(name,buying_price,selling_price)values(%s,%s,%s);'
+    curr.execute(query,values)
+    conn.commit()
 # new_product=('salt',50,70)
 # insert_products(new_product) 
 
-# def insert_sales(values):
-#     query='insert into sales(pid,quantity,created_at)values(%s,%s,now());'
-#     curr.execute(query,values)
-#     conn.commit()
+def insert_sales(values):
+    query='insert into sales(pid,quantity,created_at)values(%s,%s,now());'
+    curr.execute(query,values)
+    conn.commit()
 # new_sales=(6,50)
 # insert_sales(new_sales)    
 
 
+def insert_stock(values):
+    query='insert into stock(pid,stock_quantity)values(%s,%s);'
+    curr.execute(query,values)
+    conn.commit()
+
+
 # function to get profit per product
 def product_profit():
-    query='select p.name,p.id,sum((p.selling_price-p.buying_price)*s.quantity) as profits from products as p join sales as s on p.id=s.pid group by p.name,p.id;'
+    query='select p.name,sum((p.selling_price-p.buying_price)*s.quantity) as profits from products as p join sales as s on p.id=s.pid group by p.name;'
     curr.execute(query)
     profit=curr.fetchall()
     return profit

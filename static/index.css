@@ -1,0 +1,9 @@
+.carousel-caption{
+    color: blue;
+}
+.carousel-item img{
+    height: 120vh;
+}
+.nav-item{
+    color: red;
+}
