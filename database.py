@@ -100,10 +100,37 @@ def product_profit():
 
 # function to get sales per product
 def product_sale():
-    query='select p.name,p.id,sum(selling_price*quantity) as total_sales from products as p join sales as s on p.id=s.pid group by p.name,p.id;'
+    query='select p.name,sum(selling_price*quantity) as total_sales from products as p join sales as s on p.id=s.pid group by p.name;'
     curr.execute(query)
     sales=curr.fetchall()
     return sales
 # sales=product_sale()
 # print('Sales made')
 # print(sales)
+
+# function to get profit per day
+def profit_perday():
+    query='select DATE(s.created_at) as sale_date,sum((p.selling_price-p.buying_price)*s.quantity) as dailyprofit from sales s join products p on s.pid=p.id group by DATE(s.created_at) order by DATE(s.created_at);'
+    curr.execute(query)
+    profit=curr.fetchall()
+    return profit
+
+# function to get sales per day
+def sale_perday():
+    query='select DATE(s.created_at) as day,sum(p.selling_price*s.quantity) as soldperday from sales s join products p on s.pid=p.id group by DATE(s.created_at) order by DATE(s.created_at);'
+    curr.execute(query)
+    sale=curr.fetchall()
+    return sale
+
+# register function
+def register(values):
+    query='insert into users(full_name,email,password)values(%s,%s,%s);'
+    curr.execute(query,values)
+    conn.commit()
+
+def check_email(email):
+    query='select * from users where email=%s;'
+    curr.execute(query,(email,))
+    email=curr.fetchone()
+    return email
+

@@ -1,0 +1,21 @@
+.navbar-brand{
+    color: red;
+}
+.navbar-nav li{
+    color: red;
+}
+.nav-item a{
+    color: red;
+}
+
+.stocktable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mod {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

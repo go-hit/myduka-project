@@ -1,0 +1,54 @@
+.kiform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px;
+    border: 1.5px solid white;
+    border-radius: 20px;
+    width: 350px;
+    height: 380px;
+    backdrop-filter: blur(5px);
+    margin-left: 470px;
+    margin-top: 60px;
+}
+
+body{
+    background-image: url(https://img.freepik.com/free-photo/black-friday-sales-sign-neon-light_23-2151833076.jpg?semt=ais_hybrid&w=740&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+}
+label{
+    color: white;
+    font-weight: 40px;
+}
+input{
+    padding: 5px 10px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+.btn{
+    color: white;
+    margin: 40px;
+    padding: 5px 20px;
+
+}
+
+/* form {
+    border-radius: 20px;
+    margin-left: 30px;
+    width: 30%;
+    padding: 30px;
+    background: rgb(241, 238, 231);
+    backdrop-filter: blur(15px);
+} */
+
+/* .in {
+    width: 100%;
+    border-radius: 5px;
+} */
+/* form label input{
+    padding: 20px;
+} */

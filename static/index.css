@@ -1,9 +1,45 @@
 .carousel-caption{
-    color: blue;
+    color: rgb(255, 0, 0);
+    position: absolute;
+    /* bottom: 430px;
+    right: 4px; */
+}
+.navbar-brand{
+    color: red;
+}
+.navbar-nav li{
+    color: red;
 }
 .carousel-item img{
     height: 120vh;
 }
-.nav-item{
+.nav-item a{
     color: red;
+}
+.aboutus{
+    margin-left: 40px;
+    padding-top: 45px;
+}
+.aboutus .card{
+    position: relative;
+    bottom: 190px;
+    left: 650px;
+    background: whitesmoke;
+    border: 2px solid white;
+    transition: 0.5s ease-out;
+    border-radius: 10px;
+}
+.aboutus .card-body{
+    border-radius: 30px;
+}
+.aboutus .card:hover{
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgb(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.card-header, .card-footer{
+    background: #008bf8;
+}
+.card-body{
+    background: whitesmoke;
 }
